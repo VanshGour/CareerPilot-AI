@@ -73,6 +73,31 @@ function App() {
   return () => observer.disconnect();
 }, []);
 
+// Resume Completion Score
+const resumeFields = [
+  resumeData.name,
+  resumeData.email,
+  resumeData.phone,
+  resumeData.location,
+  resumeData.summary,
+  resumeData.degree,
+  resumeData.college,
+  resumeData.graduationYear,
+  resumeData.skills,
+  resumeData.projectName,
+  resumeData.projectTech,
+  resumeData.projectDescription,
+  resumeData.experience,
+];
+
+const completedFields = resumeFields.filter(
+  (field) => field.trim() !== ""
+).length;
+
+const resumeScore = Math.round(
+  (completedFields / resumeFields.length) * 100
+);
+
   const checkBackend = async () => {
     try {
       const response = await axios.get(`${API_URL}/health`);
@@ -473,6 +498,24 @@ function App() {
       <span>AI service status</span>
     </div>
   </div>
+  <div className="stat-card">
+  <div className="stat-icon blue">📊</div>
+
+  <div>
+    <p>Resume completion</p>
+    <h3>{resumeScore}%</h3>
+    <span>
+      {completedFields} of {resumeFields.length} fields completed
+    </span>
+
+    <div className="completion-bar">
+      <div
+        className="completion-progress"
+        style={{ width: `${resumeScore}%` }}
+      ></div> 
+    </div>
+  </div>
+</div>
 </div>
     
             <div className="dashboard">
