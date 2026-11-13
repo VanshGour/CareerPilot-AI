@@ -486,9 +486,10 @@ Notes & Requirements: ${appItem.notes || ""}`;
 
   const checkBackend = async () => {
     try {
-      const response = await axios.get(`${API_URL}/health`);
+      const response = await axios.get(`${API_URL}/health`, { timeout: 15000 });
       setStatus(response.data.status || "Connected");
-    } catch {
+    } catch (err) {
+      console.warn("Backend connection check failed:", err.message);
       setStatus("Not connected");
     }
   };
