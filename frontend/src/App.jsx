@@ -80,7 +80,7 @@ Skills: Python, FastAPI, SQL Databases, Redis, Microservices, API Design.`
 
 export default function App() {
   const [status, setStatus] = useState("Checking...");
-  const [activeSection, setActiveSection] = useState("overview");
+  const [activeSection, setActiveSection] = useState(window.location.hash.replace('#', '') || "overview");
   const [file, setFile] = useState(null);
   const [error, setError] = useState("");
 

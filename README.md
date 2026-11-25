@@ -6,6 +6,14 @@ CareerPilot AI is a full-stack platform featuring resume analysis, description r
 
 ---
 
+## 📸 Application Previews
+
+| Professional Job Application Suite | Interactive Kanban Application Pipeline |
+| :---: | :---: |
+| ![CareerPilot Suite](docs/screenshots/careerpilot_dashboard.png) | ![CareerPilot Pipeline](docs/screenshots/careerpilot_pipeline.png) |
+
+---
+
 ## ✨ Complete Feature Matrix (All 8 Milestones)
 
 | # | Feature / Milestone | Description | Status |
