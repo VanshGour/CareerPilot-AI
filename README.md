@@ -111,6 +111,14 @@ npm run dev
 ```
 - Frontend runs at: `http://localhost:5173`
 
+### 4. Health Check Verification
+
+Verify backend service connectivity:
+```bash
+curl http://127.0.0.1:8000/health
+# Returns: {"status":"running","project":"AI Job Application Copilot"}
+```
+
 ---
 
 ## 🚀 Live Cloud Deployment
@@ -121,4 +129,4 @@ Read **[DEPLOYMENT.md](DEPLOYMENT.md)** for instructions on deploying the backen
 
 ## 👨‍💻 Author
 
-**Vansh Gour** — [GitHub Profile](https://github.com/VanshGour)
+**Vansh Gour** — [GitHub Profile](https://github.com/VanshGour) · [LinkedIn](https://linkedin.com/in/vansh-gour-3632b0292)
